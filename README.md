@@ -23,14 +23,14 @@
 ## 1.2最基础的partition
  
 **最基础的partition**
-**（1）开辟临时空间left存放标定点左边的值,right存放标定点右边的值
-（2）通过对left，right，以及标定点的整理得到partition处理后的结果
-（3）排序过程无法原地完成，使用额外空间**
+**（1）开辟临时空间left存放标定点左边的值,right存放标定点右边的值**
+**（2）通过对left，right，以及标定点的整理得到partition处理后的结果**
+**（3）排序过程无法原地完成，使用额外空间**
 
-**如何原地进行partition？
-（1）选定标定点v后对数组的一部分进行处理使得[l,r]区间内arr[l+1,j]<v,使得arr[j+1,i-1]>v
-（2）对arr[i]位置的元素进行遍历>v则接在arr[i-1]之后，若<v则和arr[j]的元素进行交换,随后j++。
-（3）最后得到的三部分分别arr[j]=v,arr[l+1,j]<v,arr[j+1,r]>v,将arr[j]与arr[l]进行互换即可完成partition的作用**
+**如何原地进行partition？**
+**（1）选定标定点v后对数组的一部分进行处理使得[l,r]区间内arr[l+1,j]<v,使得arr[j+1,i-1]>v**
+**（2）对arr[i]位置的元素进行遍历>v则接在arr[i-1]之后，若<v则和arr[j]的元素进行交换,随后j++。**
+**（3）最后得到的三部分分别arr[j]=v,arr[l+1,j]<v,arr[j+1,r]>v,将arr[j]与arr[l]进行互换即可完成partition的作用**
 
 ✔此方法原地完成排序，未使用额外内存空间
 
@@ -39,15 +39,15 @@
 
 ## 1.3第一版快速排序法
 **用java实现partition**
->**int j=l;
- for(int i=l+1;i<=r;i++)
- if(arr[i]compareTo(arr[l]<0){
- j++;
- swap(arr,i,j);
- }
- swap（arr,l,j）
- return j;
- }**
+>**int j=l;**
+** for(int i=l+1;i<=r;i++)**
+ **if(arr[i]compareTo(arr[l]<0){**
+ **j++;**
+ **swap(arr,i,j);**
+ **}**
+ **swap（arr,l,j）**
+  **return j;**
+ **}**
 
  **用java实现递归**
  >**if(l>=r) return;
